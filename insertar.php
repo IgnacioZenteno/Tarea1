@@ -1,5 +1,6 @@
 <?php
 include("conexion.php");
+
 $con=conectar();
 
 $id=$_POST['id'];
@@ -11,15 +12,15 @@ $direccion=$_POST['direccion'];
 $fecha_nacimiento=$_POST['fecha_nacimiento'];
 $edad=$_POST['edad'];
 $sexo=$_POST['sexo'];
+$contrasena=password_hash($_POST['password'], PASSWORD_BCRYPT);
+ 
 
-
-$sql="INSERT INTO usuarios VALUES('$id','$correo','$rut','$nombre','$apellido','$direccion','$fecha_nacimiento','$edad','$sexo)";
+$sql="INSERT INTO usuarios VALUES('$id','$correo','$rut','$nombre','$apellido','$direccion','$fecha_nacimiento','$edad','$sexo','$contrasena')";
 $query= mysqli_query($con,$sql);
 
 if($query){
     Header("Location: signup.php");
-    
 }else {
-
+    Header("Location: index.php");
 }
 ?>

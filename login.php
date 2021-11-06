@@ -67,16 +67,16 @@
 
 		<div id="form1" class="carousel slide container-xxl" data-bs-ride="carousel">
 			<div class="form-signin border border-dark container-xxl form">
-				<form>
-
+				<form action="login.php" method="post">
+ 
 			    	<h1 class="h3 mb-3 fw-normal especial" >ACCEDER</h1>
 			    	<p class="h3 mb-3 fw-normal fs-6">Usa Tu Cuenta De Venpa</p>
 				    <div class="form-floating">
-				      <input type="email" class="form-control" id="user" placeholder="name@example.com" autofocus>
+				      <input type="email" class="form-control" name="correo" placeholder="name@example.com" autofocus>
 				      <label for="floatingInput">Dirección Email</label>
 				    </div>
 				    <div class="form-floating">
-				      <input type="password" class="form-control" id="pass" placeholder="Password">
+				      <input type="password" class="form-control" name="contrasena" placeholder="Password">
 				      <label for="floatingPassword">Constraseña</label>
 				    </div>
 				    <div class="checkbox mb-3">
@@ -85,7 +85,7 @@
 				      </label>
 				    </div>
 				    <p>¿Aun no tienes cuenta? <a href="signup.php">Regístrate</a></p>
-				    <button id="btnLogin" class="w-100 btn btn-lg btn-primary" type="submit">Ingresar</button>
+				    <button id="btnLogin" class="w-100 btn btn-lg btn-primary" type="submit" value="send">Ingresar</button>
 					<div id="alertSI" class="alert alert-success alert-dismissible fade show" role="alert">Todo Ok!</div>
 					<div id="alertNO" class="alert alert-danger" role="alert">Debe completar los datos</div>
 				</form>

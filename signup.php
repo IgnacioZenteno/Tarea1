@@ -5,6 +5,8 @@
 	$sql="SELECT * FROM usuarios";
 	$query=mysqli_query($con,$sql);
 	$row=mysqli_fetch_array($query);
+
+
 ?>
 
 
@@ -58,42 +60,42 @@
 				<h1 class="h3 mb-3 fw-normal especial">REGISTRATE</h1>
 				<form class="row g-3" action="insertar.php" method="POST">			
 						<div class="col-md-6 form-floating col">
-					    	<input type="text" class="form-control " id="floatingInputF" placeholder="firstname" name="nombre">
+					    	<input type="text" class="form-control " id="floatingInputF" placeholder="firstname" name="nombre" required>
 							<label for="floatingInput">Nombre</label>
 					  	</div>
 					  	<div class="col-md-6 form-floating col">
-					    	<input type="text" class="form-control" id="floatingInputL" placeholder="lastname" name="apellido">
+					    	<input type="text" class="form-control" id="floatingInputL" placeholder="lastname" name="apellido" required>
 						 	<label for="floatingInput">Apellido</label>
 					  	</div>
 					  	<div class="col-md-12 form-floating col">
-					    	<input type="text" class="form-control" placeholder="dni" name="rut">
+					    	<input type="text" class="form-control" placeholder="dni" name="rut" required>
 						 	<label for="floatingInput">Rut</label>
 						 	<p class="fs-7 mini-info">Por favor de ingresar el rut de la siguiente manera: "12.345.678-9"</p>
 					  	</div>
 					  	<div class="form-floating col-md-12 col">
-					      	<input type="email" class="form-control" id="floatingInputM" placeholder="name@example.com" name="correo">
+					      	<input type="email" class="form-control" id="floatingInputM" placeholder="name@example.com" name="correo" required>
 					      	<label for="floatingInput">Dirección Email</label>
 					      	<p class="fs-7 mini-info">Puedes utilizar letras, números y puntos</p>
 					    </div>	
 					  	<div class=" col-md-6 form-floating col">
-					      	<input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="constrasena">
+					      	<input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="contrasena" required>
 					      	<label for="floatingPassword">Constraseña</label>
 					    </div>
 					    <div class=" col-md-6 form-floating col">
-					      	<input type="password" class="form-control" id="floatingPasswordc" placeholder="Password">
+					      	<input type="password" class="form-control" id="floatingPasswordc" placeholder="Password" name="confir_contrasena" required> 
 					      	<label for="floatingPassword">Confirmación</label>
 					    </div>
 
 					     <div class=" col-md-12 form-floating  col">
-					      	<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="direccion">
+					      	<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="direccion" required>
 					      	<label for="floatingPassword">Dirección</label>
 					    </div>
 					  	<div class=" col-md-6 form-floating col">
-					      	<input type="number" class="form-control" min="0" max="120" name="edad">
+					      	<input type="number" class="form-control" min="0" max="120" name="edad" required>
 					      	<label for="floatingPassword">Edad</label>
 					    </div>
 					    <div class=" col-md-6 form-floating col">
-					      	<input type="date" class="form-control" name="fecha_nacimiento" >
+					      	<input type="date" class="form-control" name="fecha_nacimiento" required >
 					      	<label for="floatingPassword">Fecha de Nacimiento</label>
 					    </div>
 					    <fieldset class="row mb-3" style="margin-top: 20px;">

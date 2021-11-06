@@ -44,7 +44,6 @@
 	    </div>
 	  </div>
 	</nav>
-
 	<div id="carouselExampleControls" class="carousel slide container-xxl fotito" data-bs-ride="carousel">
 
 	  <div class="carousel-inner">
