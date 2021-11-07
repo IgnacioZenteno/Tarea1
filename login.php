@@ -1,3 +1,7 @@
+<?php
+	
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,12 +43,15 @@
 			      <input class="form-control me-2" type="search" placeholder="Buscar en Venpa.com" aria-label="Search">
 			      <button class="btn btn-outline-success" type="submit">Buscar</button>
 			    </form>
-			    <li id="navlogin" class="navbar-nav mb-lg-0"><a class="nav-link active" aria-current="page" href="login.php"><img src="img/icons/profile-user.png" id="icons_profile" class="rounded float me-2 " >Iniciar Sesión</a></li>
+			    <li id="navlogin" class="navbar-nav mb-lg-0"><a class="nav-link active" aria-current="page" href="login.php"><img src="img/icons/profile-user.png" id="icons_profile" class="rounded float me-2 " >
+			    <?php
+  				$user = "Iniciar Sesión" ;
+
+  				echo $user; ?>
+  				</a></li>
 		    </div>
 		  </div>
 		</nav>
-
-		
 
 		<div id="carouselExampleControls" class="carousel slide container-xxl fotito" data-bs-ride="carousel" >
 		  <div class="carousel-inner">
@@ -86,11 +93,13 @@
 				    </div>
 				    <p>¿Aun no tienes cuenta? <a href="signup.php">Regístrate</a></p>
 				    <button id="btnLogin" class="w-100 btn btn-lg btn-primary" type="submit" value="send">Ingresar</button>
-					<div id="alertSI" class="alert alert-success alert-dismissible fade show" role="alert">Todo Ok!</div>
-					<div id="alertNO" class="alert alert-danger" role="alert">Debe completar los datos</div>
+					
 				</form>
 			</div>
 		</div>
+
+
+		
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -98,25 +107,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
       
-
-    <script>
- 		$(document).ready(function() {        
-     		$("#alertSI").hide();
-     		$("#alertNO").hide();
-    		$("#form1").submit(function(e){
-        		e.preventDefault();    
-        		user = $.trim($("#user").val());
-        		pass = $.trim($("#pass").val());
-        		if(user.length>0 && pass.length>0){           
-            		$("#alertSI").fadeTo(2000, 500).slideUp(500, function() {
-              		$("#alertSI").slideUp(500);});        
-        		}else{
-            	$("#alertNO").fadeTo(2000, 500).slideUp(500, function() {
-            		$("#alertNO").slideUp(500);});
-        		}
-        	});   
-		});
-    </script>  
+    
       
   </body>
 	<div class="b-example-divider container-xxl"></div>
@@ -126,7 +117,6 @@
 		  <span class="text-muted">&copy; 2021 Company, Inc</span>
 		  </div>
 	    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-  	    <li class="ms-3"><h5 id="contacto"> Contacto</h5></li>
 	      <li class="ms-3"><p class="pfooter">Author: Ignacio Zenteno</p></li>
 		    <li class="ms-3"><p class="pfooter"><a id="mail" href="mailto:hege@example.com">ignacio.zenteno.20@alumnos.uda.cl</a></p></li>
 		  </ul>

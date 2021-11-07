@@ -19,8 +19,9 @@ $sql="INSERT INTO usuarios VALUES('$id','$correo','$rut','$nombre','$apellido','
 $query= mysqli_query($con,$sql);
 
 if($query){
-    Header("Location: signup.php");
-}else {
     Header("Location: index.php");
+}else {
+    echo "No pudo ser creada la cuenta";
+    Header("Location: signup.php");
 }
 ?>

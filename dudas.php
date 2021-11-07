@@ -68,23 +68,21 @@
 			<div class="form-form border border-dark  form bg " >
 				<h1 class="h3 mb-3 fw-normal especial">¿TIENES ALGO QUE DECIRNOS?</h1>
 				<p>A través de este formulario te puedes comunicar con nuestros asistentes virtuales</p>
-				<form class="row g-3">					
+				<form class="row g-3" action="comentario.php" method="post">					
 					<div class="col-md-6 form-floating col">
-				    	<input type="text" class="form-control " placeholder="firstname">
+				    	<input type="text" class="form-control " placeholder="firstname" name="nombre">
 						<label for="floatingInput">Tu Nombre</label>
 				  	</div>
 				  	<div class="form-floating col-md-6 col">
-				      	<input type="email" class="form-control" id="floatingInputM" placeholder="name@example.com">
+				      	<input type="email" class="form-control" id="floatingInputM" placeholder="name@example.com" name="correo">
 				      	<label for="floatingInput">Tu Dirección Email</label>
 				    </div>
-				</form>    
-				<form class="row g-3">
 				  	<div class="form-floating col-md-12">
-					  	<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+					  	<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="comentario"></textarea>
 					  	<label for="floatingTextarea">Escribenos Tu Comentario</label>
 					</div>
 					<button type="button" class=" w-50 btn btn-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Volver</button>
-					<button type="button" class=" w-50 btn btn btn-primary guardar" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Enviar</button>
+					<button type="submit" class=" w-50 btn btn btn-primary guardar" value="send">Enviar</button>
 				</form>	
 
 			</div>
