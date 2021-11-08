@@ -1,18 +1,16 @@
 <?php
 
-function conectar(){
 	$server = "localhost";
-	$user = "root";
-	$pass = "admin123";
-	$bd = "prueba";
+	$username = "root";
+	$password = "admin123";
+	$database = "prueba";
 
 
-	$con = mysqli_connect($server,$user,$pass);
-
-	mysqli_select_db($con,$bd);
-	return $con;
-
-}
+	try {
+	  $conn = new PDO("mysql:host=$server;dbname=$database;", $username, $password);
+	} catch (PDOException $e) {
+	  die('Connection Failed: ' . $e->getMessage());
+	}
 
 
 

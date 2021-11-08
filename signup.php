@@ -1,12 +1,33 @@
 <?php
-	include("conexion.php");
-	$con=conectar();
 
-	$sql="SELECT * FROM usuarios";
+  require 'conexion.php';
 
-    $query=mysqli_query($con,$sql);
+  $message = '';
 
-    $row=mysqli_fetch_array($query);
+  if (!empty($_POST['correo']) && !empty($_POST['contrasena'])) {
+    $sql = "INSERT INTO usuarios VALUES(:id,:correo,:rut,:nombre,:apellido,:direccion,:fecha_nacimiento,:edad,:sexo,:contrasena)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':id', $_POST['id']);
+    $stmt->bindParam(':correo', $_POST['correo']);
+    $stmt->bindParam(':rut', $_POST['rut']);
+    $stmt->bindParam(':nombre', $_POST['nombre']);
+    $stmt->bindParam(':apellido', $_POST['apellido']);
+    $stmt->bindParam(':direccion', $_POST['direccion']);
+    $stmt->bindParam(':fecha_nacimiento', $_POST['fecha_nacimiento']);
+    $stmt->bindParam(':edad', $_POST['edad']);
+    $stmt->bindParam(':sexo', $_POST['sexo']);
+    $contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
+    $stmt->bindParam(':contrasena', $contrasena);
+
+
+    
+
+    if ($stmt->execute()) {
+      $message = 'Usuario Creado Correctamente';
+    } else {
+      $message = 'Lo Sentimos, Su Cuenta No Pudo Ser Creada ';
+    }
+  }
 ?>
 
 
@@ -25,41 +46,15 @@
 </head>
 
 <body class="bg-light ">
-	<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		  <div class="container-xxl">
-		    <a class="navbar-brand" href="index.php"><img src="img/icons/logo.png" id="logo_m" class="rounded float-left" ></a>
-		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-		      <span class="navbar-toggler-icon"></span>
-		    </button>
-		    <div class="collapse navbar-collapse" id="navbarCollapse">
-		      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-		        <li class="nav-item"><a class="nav-link " aria-current="page" href="index.php">Inicio</a></li>
-		        <li class="nav-item"><a class="nav-link" href="dudas.php">¿Tienes Dudas?</a></li>
-		        <li class="nav-item dropdown">
-			          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-			            Conócenos</a>
-			          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-			            <li><a class="dropdown-item" href="acerca-de-nosotros.php">¿Quiénes Somos?</a></li>
-			            <li><hr class="dropdown-divider"></li>
-			            <li><a class="dropdown-item" href="#contacto">Contacto</a></li>
-			          </ul>
-			        </li>
-		      </ul>
-		      <form class="d-flex me-auto">
-			      <input class="form-control me-2" type="search" placeholder="Buscar en Venpa.com" aria-label="Search">
-			      <button class="btn btn-outline-success" type="submit">Buscar</button>
-			    </form>
-			    <li id="navlogin" class="navbar-nav mb-lg-0"><a class="nav-link active" aria-current="page" href="login.php"><img src="img/icons/profile-user.png" id="icons_profile" class="rounded float me-2 ">Iniciar Sesión</a></li>
-		    </div>
-		  </div>
-		</nav>
+	<?php include_once "include/header.php"; ?>
 	
-
-
-	<div  class="carousel slide container-fluid  " data-bs-ride="carousel">
+	<?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
+	<div  class="carousel slide container-fluid  " data-bs-ride="carousel" style="margin-top: 20px;">
 			<div class="form-signup form-control border border-dark  form " >
 				<h1 class="h3 mb-3 fw-normal especial">REGISTRATE</h1>
-				<form class="row g-3" action="insertar.php" method="POST">			
+				<form class="row g-3" action="signup.php" method="POST">			
 						<div class="col-md-6 form-floating col">
 					    	<input type="text" class="form-control " id="floatingInputF" placeholder="firstname" name="nombre" required>
 							<label for="floatingInput">Nombre</label>
@@ -122,55 +117,8 @@
 				</form>			
 			</div>
 		</div>
-
-	<table class="table">
-		<thead class="table-success table-striped">
-			<th>Correo</th>
-			<th>Rut</th>
-			<th>Nombre</th>
-			<th>Apellido</th>
-			<th>Direccion</th>
-			<th>Edad</th>
-			<th>Fecha de nacimiento</th>
-			<th>Sexo</th>
-			<th>      </th>
-			<th>       </th>
-		</thead>
-		<tbody>
-			<?php
-                while($row=mysqli_fetch_array($query)){
-            ?>
-            <tr>
-                <th><?php  echo $row['correo']?></th>
-                <th><?php  echo $row['rut']?></th>
-                <th><?php  echo $row['nombre']?></th>
-                <th><?php  echo $row['apellido']?></th>
-                <th><?php  echo $row['direccion']?></th> 
-                <th><?php  echo $row['edad']?></th>  
-                <th><?php  echo $row['fecha_nacimiento']?></th>
-                <th><?php  echo $row['sexo']?></th>     
-                <th><a href="actualizar.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-info">Editar</a></th>
-                <th><a href="delete.php?id=<?php echo $row['cod_estudiante'] ?>" class="btn btn-danger">Eliminar</a></th>        
-            	</tr>
-                <?php 
-				}
-             ?>
-		</tbody>
-	</table>
 										
-	<div class="b-example-divider container-xxl"></div>
-	<div class="container-xxl bg-dark" id="footer">
-		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-		  <div class="col-md-4 d-flex align-items-center ">
-		  <span class="text-muted">&copy; 2021 Company, Inc</span>
-		  </div>
-	    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-  	    <li class="ms-3"><h5 id="contacto"> Contacto</h5></li>
-	      <li class="ms-3"><p class="pfooter">Author: Ignacio Zenteno</p></li>
-		    <li class="ms-3"><p class="pfooter"><a id="mail" href="mailto:hege@example.com">ignacio.zenteno.20@alumnos.uda.cl</a></p></li>
-		  </ul>
-	  </footer>
-	</div>
+	<?php include_once "include/footer.php"; ?>
 
 </body>
 </html>
