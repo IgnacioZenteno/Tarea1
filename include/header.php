@@ -1,5 +1,7 @@
 <header class="top">
-    <nav class="nav navbar navbar-expand-md navbar-dark fixed-top bg-dark" style="background: linear-gradient(133deg, rgba(255,144,21,1) 2%, rgba(246,114,1,1) 35%, rgba(255,94,28,1) 57%, rgba(247,72,0,1) 88%);">
+
+  
+    <nav class="nav navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <div class="container-xxl">
             <a class="navbar-brand" href="index.php"><img src="img/icons/logo.png" id="logo_m" class="rounded float-left"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,9 +27,23 @@
                 </form>
                   <li id="navlogin" class="navbar-nav mb-lg-0">
                     <?php if(!empty($user)):?>
-                      <a class="nav-link" aria-current="page" href="usuario.php"><img src="img/icons/profile-user.png" id="icons_profile" class="rounded float me-2 " ><?= $user['nombre']; ?></p></a> 
+                      <div class="dropdown">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButtonSM" data-bs-toggle="dropdown" aria-expanded="false" style="background: linear-gradient(133deg, rgba(255,144,21,1) 2%, rgba(246,114,1,1) 35%, rgba(255,94,28,1) 57%, rgba(247,72,0,1) 88%);">
+                          <img src="img/icons/profile-user.png" id="icons_profile" class="rounded float me-2 " >
+                          <?= $user['nombre']; ?>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonSM" style="text-align: left;">
+                          <li><a class="dropdown-item textdrop" href="usuario.php" style="text-align: left; font-size: 12px;">Datos De Usuario</a></li>
+                          <li><a class="dropdown-item textdrop " href="#"style="text-align: left; font-size: 12px;">Borrar Cuenta</a></li>
+                          <li><hr class="dropdown-divider "></li>
+                          <li><a class="dropdown-item textdrop" href="logout.php" style="text-align: left; font-size: 12px;">Cerrar Sesión</a></li>
+                        </ul>
+
+
+                       
+                      </div>
                     <?php else: ?>
-                      <a class="nav-link" aria-current="page" href="login.php"><img src="img/icons/profile-user.png" id="icons_profile" class="rounded float me-2 " >Iniciar Sesión</p></a>
+                      <a class="nav-link" aria-current="page" href="login.php"><img src="img/icons/profile-user.png" id="icons_profile" class="rounded float me-2 " >Iniciar Sesión</a>
                     <?php endif; ?>
                 </li>
             </div>

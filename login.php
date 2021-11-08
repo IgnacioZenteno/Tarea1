@@ -40,7 +40,7 @@
 	
 </head>
 
-<body class="bg-light ">
+<body >
 		<?php include_once "include/header.php"; ?>
 		<?php include_once "include/banner.php"; ?>
 
@@ -51,8 +51,8 @@
 
 
 
-		<div id="form1" class="carousel slide container-xxl" data-bs-ride="carousel">
-			<div class="form-signin border border-dark container-xxl form">
+		<div id="form1" class="carousel slide container-xxl " data-bs-ride="carousel">
+			<div class="form-signin border border-dark container-xxl form bg-light ">
 				<form action="login.php" method="POST">
  
 			    	<h1 class="h3 mb-3 fw-normal especial" >ACCEDER</h1>

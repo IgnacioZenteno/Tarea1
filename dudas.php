@@ -1,6 +1,19 @@
 <?php
-
+  session_start();
   require 'conexion.php';
+
+  if (isset($_SESSION['user_id'])) {
+    $records = $conn->prepare('SELECT * FROM usuarios WHERE id = :id');
+    $records->bindParam(':id', $_SESSION['user_id']);
+    $records->execute();
+    $results = $records->fetch(PDO::FETCH_ASSOC);
+
+    $user = null;
+
+    if (count($results) > 0) {
+      $user = $results;
+    }
+  }
 
   $message = '';
 
@@ -30,13 +43,15 @@
 	<link rel="icon" type="img\icons\v_logo.png" href="C:\AppServ\www\UDA\Tarea_1\img\icons\v_logo.png">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="bg-light">
 
 		<?php include_once "include/header.php"; ?>
 		<?php include_once "include/banner.php"; ?>
+
 		<?php if(!empty($message)): ?>
 	      <p> <?= $message ?></p>
 	    <?php endif; ?>
@@ -47,11 +62,11 @@
 				<p>A través de este formulario te puedes comunicar con nuestros asistentes virtuales</p>
 				<form class="row g-3" action="dudas.php" method="post">					
 					<div class="col-md-6 form-floating col">
-				    	<input type="text" class="form-control " placeholder="firstname" name="nombre">
+				    	<input type="text" class="form-control " placeholder="firstname" name="nombre" value="<?=$user['nombre']; ?> <?= $user['apellido']; ?>"  >
 						<label for="floatingInput">Tu Nombre</label>
 				  	</div>
 				  	<div class="form-floating col-md-6 col">
-				      	<input type="email" class="form-control" id="floatingInputM" placeholder="name@example.com" name="correo">
+				      	<input type="email" class="form-control" id="floatingInputM" placeholder="name@example.com" name="correo" value="<?=$user['correo']; ?>">
 				      	<label for="floatingInput">Tu Dirección Email</label>
 				    </div>
 				  	<div class="form-floating col-md-12">

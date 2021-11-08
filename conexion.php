@@ -1,5 +1,18 @@
 <?php
+	function conectar(){
+	   	$server = "localhost";
+		$username = "root";
+		$password = "admin123";
+		$database = "prueba";
 
+
+	    $conn=mysqli_connect($server,$username,$password);
+
+	    mysqli_select_db($conn,$database);
+
+	    return $conn;
+	}
+	
 	$server = "localhost";
 	$username = "root";
 	$password = "admin123";
@@ -12,6 +25,5 @@
 	  die('Connection Failed: ' . $e->getMessage());
 	}
 
-
-
+	
 ?>
