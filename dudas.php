@@ -13,6 +13,8 @@
     if (count($results) > 0) {
       $user = $results;
     }
+
+    
   }
 
   $message = '';
@@ -59,7 +61,7 @@
 		<div class="carousel slide container-xxl " data-bs-ride="carousel">
 			<div class="form-form border border-dark  form bg " >
 				<h1 class="h3 mb-3 fw-normal especial">¿TIENES ALGO QUE DECIRNOS?</h1>
-				<p>A través de este formulario te puedes comunicar con nuestros asistentes virtuales</p>
+				<p>A través 	de este formulario te puedes comunicar con nuestros asistentes virtuales</p>
 				<form class="row g-3" action="dudas.php" method="post">					
 					<div class="col-md-6 form-floating col">
 				    	<input type="text" class="form-control " placeholder="firstname" name="nombre" value="<?=$user['nombre']; ?> <?= $user['apellido']; ?>"  >
@@ -76,6 +78,7 @@
 					<button type="button" class=" w-50 btn btn-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Volver</button>
 					<button type="submit" class=" w-50 btn btn btn-primary guardar" value="send">Enviar</button>
 				</form>	
+
 
 			</div>
 		</div>

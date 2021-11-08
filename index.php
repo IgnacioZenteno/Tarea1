@@ -46,7 +46,7 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary especial h1">OFERTA ESPECIAL</strong>
+          <strong class="d-inline-block mb-2 text-success especial h3">OFERTA ESPECIAL</strong>
           <h4 class="mb-0">Traje de marciano</h4><br>
 			    <p class="text-decoration-line-through text-po">Antes $24.990</p>
 			    <p class="h5 text-po"> Ahora $12.490</p>
@@ -60,7 +60,7 @@
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success especial h1 ">OFERTA ESPECIAL</strong>
+          <strong class="d-inline-block mb-2 text-success especial h3">OFERTA ESPECIAL</strong>
           <h3 class="mb-0">Vestido de calabaza</h3><br>
           <p class="text-decoration-line-through text-po">Antes $6.990</p>
 			    <p class="h5 text-po">Ahora $5.990</p>
@@ -79,23 +79,23 @@
   <div class="row g-5">
     <div class="col-md-8">
 
-    	<div class="bg">
+    	<div class="bg rounded">
       <h3 class="pb-4 mb-4 fst-italic border-bottom especial h1">
-        LLEGO HALLOWEEN
+        LLEGO NAVIDAD
       </h3>
 
-      <article class="blog-post">
+      <article class="blog-post ">
         <h2 class="blog-post-title">Aprovecha esta oportunidad unica con nuestros productos <span class="icons-h fs-2 ">A</span></h2>
 
         
-				<p class=" text">Más de 9.000 disfraces para Halloween, maquillaje y decoración para el Día de los Muertos y disfruta de un Halloween de miedo.<br>Los disfraces de Halloween más originales<br>En Disfrazzes siempre queremos que te lo pases bien y no importa como hacerlo. El cachondeo en Halloween siempre está de la mano del miedo, y no podemos dejarte marchar de nuestro templo del miedo sin que te lleves un disfraz de Halloween para asustar a todos tus compañeros, familiares y amigos. Disfraces halloween 2021 para adultos, niños y niñas!</p>
+				<p class=" text">Más de 9.000 disfraces, maquillaje y decoración para Navidad, ven y disfruta de una fiesta especial.<br>Los disfraces de navidad más originales<br>En ven-pa siempre queremos que te lo pases bien y no importa como hacerlo, y no podemos dejarte marchar de nuestro fabrica de santa sin que te lleves un disfraz para pasar la mejor noche junto a todos tus compañeros, familiares y amigos. Disfraces Navidad 2021 para adultos, niños y niñas!</p>
 
         </div>
 
     <div class="bg-secondary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden fondo rounded">
       <div class="my-3 p-3">
-        <h2 class="display-5 fs-3 especial">VE LO NUEVO EN VENPA, ESPECIAL DE TERROR <span class="icons-h fs-2"> Q</span></h2>
-        <p class="lead fw-bold ">llegaron nuestros ultimos productos de miedo para disfrutar este halloween, no te lo pierdas </p>
+        <h2 class="display-5 fs-3 especial">VE LO NUEVO EN VENPA, ESPECIAL DE NAVIDAD <span class="icons-h fs-2"> Q</span></h2>
+        <p class="lead fw-bold ">llegaron nuestros ultimos productos para disfrutar esta ocasión, no te lo pierdas </p>
       </div>
       <div class="bg-dark shadow-sm mx-auto" style="width: 100%; height: 300px; border-radius: 21px 21px 0 0;">
       	<iframe  src="https://www.youtube.com/embed/UCLnbCG73xE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -108,7 +108,7 @@
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-4 mb-3 bg-light rounded bg">
-          <h4 class="fst-italic">No te olvides de crear</h4>
+          <h4 class="fst-italic">No te olvides de crear una cuenta</h4>
           <p class="mb-0">Crea tu cuenta para poder optar a promociones unicas</p>
         </div>
 

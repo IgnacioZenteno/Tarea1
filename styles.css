@@ -16,20 +16,26 @@ body {
 /*fuente*/
 @font-face{
     font-family: halloween;
-    src:  url(fuente/halloween.ttf);
-
-   
+    src:  url(fuente/halloween.ttf);  
 }
 @font-face{
     font-family: icons-halloween;
     src: url(fuente/Icons-Halloween.otf);
 }
+@font-face{
+    font-family: icons-christmas;
+    src: url(fuente/Christmas_t.ttf);
+}
+@font-face{
+    font-family: Christma;
+    src: url(fuente/Christmas_text.ttf);
+}
 
 .especial{
-    font-family: halloween;
+    font-family: Christma;
 }
 .icons-h{
-    font-family: icons-halloween;
+    font-family: icons-christmas;
 }
 
 

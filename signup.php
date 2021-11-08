@@ -5,7 +5,7 @@
   $message = '';
 
   if (!empty($_POST['correo']) && !empty($_POST['contrasena'])) {
-    $sql = "INSERT INTO usuarios VALUES(:id,:correo,:rut,:nombre,:apellido,:direccion,:fecha_nacimiento,:edad,:sexo,:contrasena)";
+    $sql = "INSERT INTO usuarios VALUES(:id,:correo,:rut,:nombre,:apellido,:direccion,:fecha_nacimiento,:edad,:sexo,:contrasena,:rol)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':id', $_POST['id']);
     $stmt->bindParam(':correo', $_POST['correo']);
@@ -18,9 +18,8 @@
     $stmt->bindParam(':sexo', $_POST['sexo']);
     $contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
     $stmt->bindParam(':contrasena', $contrasena);
+    $stmt->bindParam(':rol', $_POST[null]);
 
-
-    
 
     if ($stmt->execute()) {
       $message = 'Usuario Creado Correctamente';
