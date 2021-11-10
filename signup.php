@@ -42,6 +42,8 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+	 
 </head>
 
 <body class="bg-light ">
@@ -110,7 +112,7 @@
 						      	</div>
 						    </div>
 						</fieldset>
-						<a class="col-md-6 w-50 pin fw-bold" href="login.php#floatingInput">Prefiero Iniciar Sesion</a>
+						<a class="col-md-6 w-50 pin fw-bold" href="index.php#floatingInput">Prefiero Iniciar Sesion</a>
 						<button type="submit" class=" w-50 btn btn btn-primary" >Guardar</button>
 				
 				</form>			

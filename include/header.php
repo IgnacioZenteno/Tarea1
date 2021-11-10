@@ -3,13 +3,13 @@
   
     <nav class="nav navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <div class="container-xxl">
-            <a class="navbar-brand" href="index.php"><img src="img/icons/logo.png" id="logo_m" class="rounded float-left"></a>
+            <a class="navbar-brand" href="Inicio.php"><img src="img/icons/logo.png" id="logo_m" class="rounded float-left"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item"><a class="nav-link " aria-current="page" href="index.php">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link " aria-current="page" href="Inicio.php">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="dudas.php">¿Tienes Dudas?</a></li>
                 <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -34,16 +34,13 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonSM" style="text-align: left;">
                           <li><a class="dropdown-item textdrop" href="usuario.php" style="text-align: left; font-size: 12px;">Datos De Usuario</a></li>
-                          <li><a class="dropdown-item textdrop " href="#"style="text-align: left; font-size: 12px;">Borrar Cuenta</a></li>
+                          
                           <li><hr class="dropdown-divider "></li>
                           <li><a class="dropdown-item textdrop" href="logout.php" style="text-align: left; font-size: 12px;">Cerrar Sesión</a></li>
                         </ul>
-
-
-                       
                       </div>
                     <?php else: ?>
-                      <a class="nav-link" aria-current="page" href="login.php"><img src="img/icons/profile-user.png" id="icons_profile" class="rounded float me-2 " >Iniciar Sesión</a>
+                      <a class="nav-link" aria-current="page" href="index.php"><img src="img/icons/profile-user.png" id="icons_profile" class="rounded float me-2 " >Iniciar Sesión</a>
                     <?php endif; ?>
                 </li>
             </div>

@@ -56,32 +56,48 @@
 
 		<?php if(!empty($message)): ?>
 	      <p> <?= $message ?></p>
-	    <?php endif; ?>
+	  <?php endif; ?>
 
-		<div class="carousel slide container-xxl " data-bs-ride="carousel">
+	  <?php if(!empty($user)):?>
+    <div class="carousel slide container-xxl " data-bs-ride="carousel">
 			<div class="form-form border border-dark  form bg " >
 				<h1 class="h3 mb-3 fw-normal especial">¿TIENES ALGO QUE DECIRNOS?</h1>
 				<p>A través 	de este formulario te puedes comunicar con nuestros asistentes virtuales</p>
-				<form class="row g-3" action="dudas.php" method="post">					
-					<div class="col-md-6 form-floating col">
-				    	<input type="text" class="form-control " placeholder="firstname" name="nombre" value="<?=$user['nombre']; ?> <?= $user['apellido']; ?>"  >
-						<label for="floatingInput">Tu Nombre</label>
+				<form class="row g-3" action="dudas.php" method="post">
+					<?php if(!empty($user)):?>
+            <div class="col-md-6 form-floating col">
+				    	<input type="text" class="form-control " readonly placeholder="firstname" name="nombre" value="<?=$user['nombre']; ?> <?= $user['apellido']; ?>"  >
+							<label for="floatingInput">Tu Nombre</label>
 				  	</div>
 				  	<div class="form-floating col-md-6 col">
-				      	<input type="email" class="form-control" id="floatingInputM" placeholder="name@example.com" name="correo" value="<?=$user['correo']; ?>">
-				      	<label for="floatingInput">Tu Dirección Email</label>
-				    </div>
-				  	<div class="form-floating col-md-12">
-					  	<textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="comentario"></textarea>
-					  	<label for="floatingTextarea">Escribenos Tu Comentario</label>
+				      <input type="email" class="form-control" readonly  placeholder="name@example.com" name="correo" value="<?=$user['correo']; ?>">
+				      <label for="floatingInput">Tu Dirección Email</label>
+				  	</div>          
+          <?php else: ?>
+             <div class="col-md-6 form-floating col">
+				    	<input type="text" class="form-control "  placeholder="firstname" name="nombre"  >
+							<label for="floatingInput">Tu Nombre</label>
+				  	</div>
+				  	<div class="form-floating col-md-6 col">
+				      <input type="email" class="form-control" placeholder="name@example.com" name="correo" >
+				      <label for="floatingInput">Tu Dirección Email</label>
+				  	</div>           
+          <?php endif; ?>					
+				  <div class="form-floating col-md-12">
+					  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="comentario"></textarea>
+					  <label for="floatingTextarea">Escribenos Tu Comentario</label>
 					</div>
 					<button type="button" class=" w-50 btn btn-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Volver</button>
 					<button type="submit" class=" w-50 btn btn btn-primary guardar" value="send">Enviar</button>
 				</form>	
-
-
 			</div>
 		</div>
+  <?php else: ?>
+    <?php  Header("Location: /uda/tarea1"); ?>          
+  <?php endif; ?>
+
+
+		
 
 	<?php include_once "include/footer.php"; ?>
 </body>
