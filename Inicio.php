@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  require 'conexion.php';
+  require 'consultas/conexion.php';
 
   if (isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT * FROM usuarios WHERE id = :id');
@@ -25,7 +25,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-escale=1.0">
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/fuente.css">
   <title>Venpa - Tienda de venta de ropa online</title>
 	<link rel="icon" type="img\icons\v_logo.png" href="C:\AppServ\www\UDA\Tarea_1\img\icons\v_logo.png">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -130,9 +131,9 @@
       </div>
     </div>
   </main> 
-  <?php else: ?>
-    <?php  Header("Location: /uda/tarea1"); ?>          
-  <?php endif; ?>
+  <?php else: 
+     Header("Location: /uda/tarea1");          
+   endif; ?>
 
 	
 	<?php include_once "include/footer.php"; ?>

@@ -36,7 +36,7 @@
                           <li><a class="dropdown-item textdrop" href="usuario.php" style="text-align: left; font-size: 12px;">Datos De Usuario</a></li>
                           
                           <li><hr class="dropdown-divider "></li>
-                          <li><a class="dropdown-item textdrop" href="logout.php" style="text-align: left; font-size: 12px;">Cerrar Sesión</a></li>
+                          <li><a class="dropdown-item textdrop" href="consultas/logout.php" style="text-align: left; font-size: 12px;">Cerrar Sesión</a></li>
                         </ul>
                       </div>
                     <?php else: ?>

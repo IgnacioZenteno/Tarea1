@@ -1,20 +1,22 @@
 <?php
-  session_start();
+    session_start();
 
-  require 'conexion.php';
+    require 'consultas/conexion.php';
 
-  if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT * FROM usuarios WHERE id = :id');
-    $records->bindParam(':id', $_SESSION['user_id']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
+    if (isset($_SESSION['user_id'])) {
+        $records = $conn->prepare('SELECT * FROM usuarios WHERE id = :id');
+        $records->bindParam(':id', $_SESSION['user_id']);
+        $records->execute();
+        $results = $records->fetch(PDO::FETCH_ASSOC);
 
-    $user = null;
+        $user = null;
 
-    if (count($results) > 0) {
-      $user = $results;
+        if (count($results) > 0) {
+            $user = $results;
+        }
     }
-  }
+
+ 
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +26,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Datos de Usuario</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/fuente.css">
         <link rel="icon" type="img/icons/v_logo.png" href="C:\AppServ\www\UDA\Tarea_1\img\icons\v_logo.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -46,7 +49,7 @@
             <h1 class="h3 mb-1 fw-normal">Bienvenido <?= $user['nombre']; ?></h1>
             <h5 class="fw-normal mb-4">Aquí puedes actualizar tus datos personales</h5>
 
-            <form class="row g-3" action="update.php" method="POST"> 
+            <form class="row g-3" action="consultas/update.php" method="POST"> 
                 <div class="col-md-12 form-floating col">
                     <input type="text" class="form-control " id="floatingInputF" placeholder="firstname" name="correo" readonly value="<?=$user['correo'];?>">
                 </div>
@@ -64,7 +67,7 @@
                     <p class="fs-7 mini-info">Por favor de ingresar el rut de la siguiente manera: "12.345.678-9"</p>
                 </div>
                 <div class=" col-md-12 form-floating  col">
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="direccion" required value="<?=$user['direccion']; ?>">
+                    <input type="text" class="form-control" placeholder="1234 Main St" name="direccion" required value="<?=$user['direccion']; ?>">
                     <label for="floatingPassword">Dirección</label>
                 </div>
                 <div class=" col-md-6 form-floating col">
@@ -114,7 +117,7 @@
                         <label for="floatingPassword">Confirmación</label>
                     </div>
                     <div>
-                        <a href="delete.php?correo=<?php echo $user['correo'] ?>" class="btn btn-danger">Eliminar</a>
+                        <a href="consultas/delete.php?correo=<?php echo $user['correo'] ?>" class="btn btn-danger">Eliminar</a>
                         <button type="submit" class=" w-auto btn btn btn-primary" >Guardar Cambios</button>
                     </div>
                 </form>         

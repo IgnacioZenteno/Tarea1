@@ -1,6 +1,6 @@
 <?php
 	session_start();
-  	require 'conexion.php';
+  	require 'consultas/conexion.php';
 	if (isset($_SESSION['user_id'])) {
 	    header('Location: usuario.php');
 	    $$GLOBALS['user_id'] = something;
@@ -27,7 +27,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-escale=1.0">
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/fuente.css">
 	<title>Login</title>
 	<link rel="icon" type="img\icons\v_logo.png" href="C:\AppServ\www\UDA\Tarea_1\img\icons\v_logo.png">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -55,26 +56,19 @@
 			    	<h1 class="h3 mb-3 fw-normal especial" >ACCEDER</h1>
 			    	<p class="h3 mb-3 fw-normal fs-6">Usa Tu Cuenta De Venpa</p>
 				    <div class="form-floating">
-				      <input type="email" class="form-control" name="correo" placeholder="name@example.com" autofocus>
-				      <label for="floatingInput">Dirección Email</label>
+				      	<input type="email" class="form-control" name="correo" placeholder="name@example.com" autofocus>
+				    	<label for="floatingInput">Dirección Email</label>
 				    </div>
-				    <div class="form-floating">
-				      <input type="password" class="form-control" name="contrasena" placeholder="Password">
-				      <label for="floatingPassword">Constraseña</label>
+				    <div class="form-floating mb-3">
+				      	<input type="password" class="form-control" name="contrasena" placeholder="Password">
+				      	<label for="floatingPassword">Constraseña</label>
 				    </div>
-				    <div class="checkbox mb-3">
-				      <label>
-				        <input type="checkbox" value="remember-me"> Recuerdame
-				      </label>
-				    </div>
-				    <p>¿Aun no tienes cuenta? <a href="signup.php">Regístrate</a></p>
-				    <button id="btnLogin" class="w-100 btn btn-lg btn-primary" type="submit" value="send">Ingresar</button>
+            		<p class=" mb-2 h6" style="font-size: 12px;">¿Olvidaste tu clave? <a href="recuperar_pass.php">Recuperar Contraseña</a></p>		    
+				    <button id="btnLogin" class="w-100 btn btn-lg btn-primary mb-3" type="submit" value="send">Ingresar</button>
+            		<p class=" h6">¿Aun no tienes cuenta? <a href="signup.php">Regístrate</a></p>
 				</form>
 			</div>
 		</div>
-
-		</tbody>
-	</table>
 
 	<?php include_once "include/footer.php"; ?>
 </body>

@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require 'conexion.php';
+  require 'consultas/conexion.php';
 
   if (isset($_SESSION['user_id'])) {
     $records = $conn->prepare('SELECT * FROM usuarios WHERE id = :id');
@@ -40,8 +40,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-escale=1.0">
 	<title>Dudas o Consultas</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/fuente.css">
 	<link rel="icon" type="img\icons\v_logo.png" href="C:\AppServ\www\UDA\Tarea_1\img\icons\v_logo.png">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -87,8 +87,11 @@
 					  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" name="comentario"></textarea>
 					  <label for="floatingTextarea">Escribenos Tu Comentario</label>
 					</div>
-					<button type="button" class=" w-50 btn btn-danger " data-bs-toggle="modal" data-bs-target="#staticBackdrop">Volver</button>
-					<button type="submit" class=" w-50 btn btn btn-primary guardar" value="send">Enviar</button>
+
+					<div>
+						<button type="submit" class=" w-25 btn btn btn-primary border-dark" value="send">Enviar</button>
+          </div>
+					
 				</form>	
 			</div>
 		</div>
