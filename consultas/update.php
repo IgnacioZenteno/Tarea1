@@ -8,8 +8,9 @@
     $direccion=$_POST['direccion'];
     $edad=$_POST['edad'];
     $fecha_nacimiento=$_POST['fecha_nacimiento'];
+    $sexo=$_POST['sexo'];
 
-    $sql=$conn->prepare("UPDATE usuarios SET  rut='$rut',nombre='$nombre',apellido='$apellido',direccion='$direccion',edad='$edad',fecha_nacimiento='$fecha_nacimiento' WHERE correo ='$correo'");
+    $sql=$conn->prepare("UPDATE usuarios SET  rut='$rut',nombre='$nombre',apellido='$apellido',direccion='$direccion',edad='$edad',fecha_nacimiento='$fecha_nacimiento' ,sexo='$sexo' WHERE correo ='$correo'");
 
     $sql->execute();
 

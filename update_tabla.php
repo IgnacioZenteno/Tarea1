@@ -32,6 +32,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="Js/jquery-3.4.1.min.Js"></script>
 
         
     </head>
@@ -49,7 +50,7 @@
             <h1 class="h3 mb-1 fw-normal">Bienvenido <?= $row['nombre']; ?></h1>
             <h5 class="fw-normal mb-4">Aquí puedes actualizar tus datos personales</h5>
 
-            <form class="row g-3" action="consultas/update.php" method="POST"> 
+            <form class="row g-3" action="consultas/update_table.php" method="POST"> 
                 <div class="col-md-12 form-floating col">
                     <input type="text" class="form-control " placeholder="firstname" name="correo" readonly value="<?=$row['correo'];?>">
                 </div>
@@ -71,13 +72,14 @@
                     <label for="floatingPassword">Dirección</label>
                 </div>
                 <div class=" col-md-6 form-floating col">
-                    <input type="text" class="form-control" min="0" max="120" name="edad" required value="<?=$row['edad']; ?>">
-                    <label for="floatingPassword">Edad</label>
+                            <input type="date" class="form-control" id="fecha"  name="fecha_nacimiento" required >
+                            <label for="floatingPassword">Fecha de Nacimiento</label>
                 </div>
                 <div class=" col-md-6 form-floating col">
-                    <input type="text" class="form-control" name="fecha_nacimiento" required  value="<?=$row['fecha_nacimiento'];?>">
-                    <label for="floatingPassword">Fecha de Nacimiento</label>
+                    <input type="text" class="form-control" min="0" max="120" name="edad" id="edad" readonly="">
+                    <label for="floatingPassword">Edad</label>
                 </div>
+               
                 <fieldset class="row " style="margin-top: 20px;">
                     <legend class="col-form-label col-sm-2 pt-0">Sexo</legend>
                     <div class="col-sm-10">
@@ -99,7 +101,7 @@
                         </div>
                         <div class="form-check">
                             <?php if ($row['sexo']=='otro'):?>
-                                <input class="form-check-input" type="radio" name="sexo" id="gridRadios3" value="otro"checked >
+                                <input class="form-check-input" type="radio" name="sexo" id="gridRadios3" value="otro" checked >
                             <?php else:?>
                                 <input class="form-check-input" type="radio" name="sexo" id="gridRadios3" value="otro">
                             <?php endif;?>
@@ -108,7 +110,7 @@
                     </div>
                 </fieldset>
                   <div class=" col-md-6 form-floating col">
-                    <input type="text" class="form-control" name="rol" required  value="<?=$row['rol'];?>">
+                    <input type="text" class="form-control" name="rol" value="<?=$row['rol'];?>">
                     <label for="floatingRol">rol</label>
                 </div>
                 <div>
@@ -127,4 +129,5 @@
 
         <?php include_once "include/footer.php"; ?>
     </body>
+     <script src='Js/Funciones.js'></script>
 </html>

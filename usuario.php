@@ -32,7 +32,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+        <script src="Js/jquery-3.4.1.min.Js"></script>
         
     </head>
 
@@ -70,14 +70,16 @@
                     <input type="text" class="form-control" placeholder="1234 Main St" name="direccion" required value="<?=$user['direccion']; ?>">
                     <label for="floatingPassword">Dirección</label>
                 </div>
+                 <div class=" col-md-6 form-floating col">
+                            <input type="date" class="form-control" id="fecha"  name="fecha_nacimiento" required >
+                            <label for="floatingPassword">Fecha de Nacimiento</label>
+                </div>
                 <div class=" col-md-6 form-floating col">
-                    <input type="text" class="form-control" min="0" max="120" name="edad" required value="<?=$user['edad']; ?>">
+                    <input type="text" class="form-control" min="0" max="120" name="edad" id="edad" readonly="">
                     <label for="floatingPassword">Edad</label>
                 </div>
-                <div class=" col-md-6 form-floating col">
-                    <input type="text" class="form-control" name="fecha_nacimiento" required  value="<?=$user['fecha_nacimiento'];?>">
-                    <label for="floatingPassword">Fecha de Nacimiento</label>
-                </div>
+               
+
                 <fieldset class="row " style="margin-top: 20px;">
                     <legend class="col-form-label col-sm-2 pt-0">Sexo</legend>
                         <div class="col-sm-10">
@@ -139,6 +141,7 @@
 
         <?php include_once "include/footer.php"; ?>
     </body>
+    <script src='Js/Funciones.js'></script>
 </html>
 
  

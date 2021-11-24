@@ -20,13 +20,15 @@
     $stmt->bindParam(':contrasena', $contrasena);
     $stmt->bindParam(':rol', $_POST[null]);
 
-
     if ($stmt->execute()) {
       $message = 'Usuario Creado Correctamente';
     } else {
       $message = 'Lo Sentimos, Su Cuenta No Pudo Ser Creada ';
     }
   }
+
+
+
 ?>
 
 
@@ -44,7 +46,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-	 
+	 	<script src="Js/jquery-3.4.1.min.Js"></script>
 </head>
 
 <body class="bg-light ">
@@ -88,14 +90,16 @@
 					      	<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="direccion" required>
 					      	<label for="floatingPassword">Dirección</label>
 					    </div>
-					  	<div class=" col-md-6 form-floating col">
-					      	<input type="number" class="form-control" min="0" max="120" name="edad" required>
-					      	<label for="floatingPassword">Edad</label>
-					    </div>
-					    <div class=" col-md-6 form-floating col">
-					      	<input type="date" class="form-control" name="fecha_nacimiento" required >
-					      	<label for="floatingPassword">Fecha de Nacimiento</label>
-					    </div>
+					   <div class=" col-md-6 form-floating col">
+                   <input type="date" class="form-control" id="fecha"  name="fecha_nacimiento" required >
+                    <label for="floatingPassword">Fecha de Nacimiento</label>
+                </div>
+                <div class=" col-md-6 form-floating col">
+                    <input type="text" class="form-control" min="0" max="120" name="edad" id="edad" readonly="">
+                    <label for="floatingPassword">Edad</label>
+                </div>
+
+					    
 					    <fieldset class="row mb-3" style="margin-top: 20px;">
 			    			<legend class="col-form-label col-sm-2 pt-0">Sexo</legend>
 						    <div class="col-sm-10">
@@ -123,4 +127,5 @@
 	<?php include_once "include/footer.php"; ?>
 
 </body>
+<script src='Js/Funciones.js'></script>
 </html>
